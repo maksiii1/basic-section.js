@@ -1,14 +1,17 @@
 const firstWord = (text) => {
-  const trimmedText = text.replace(/\n/g, "");
+  const replacedText = text.replace(/\n/g, "");
 
-  const sentences = trimmedText.match(/[^.]*[.]/g);
+  const sentences = replacedText.match(/[^.]*[.]/g);
 
   const firstWords = sentences.map((element) => {
-    const trimmedSentence = element.trim();
-    const firstWord = trimmedSentence.split(" ");
-    return firstWord[0];
+    const trimmedText = element.trim();
+
+    const mainWords = trimmedText.split(" ");
+
+    return mainWords[0];
   });
-  return firstWords;
+
+  return firstWords.join(", ");
 };
 
 const mainText = `After a long day of hiking in the mountains, 
