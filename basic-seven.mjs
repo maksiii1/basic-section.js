@@ -13,3 +13,5 @@ const ageProgress = () => {
 };
 
 ageProgress();
+
+export { ageProgress };
